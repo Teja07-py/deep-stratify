@@ -59,7 +59,7 @@ const Factor = ({
       </div>
       <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{title}</span>
     </div>
-    <div className="mb-1 text-xl font-bold text-bull">{value}</div>
+    <div className="mb-1 font-display text-[22px] font-extrabold text-bull tracking-[-0.02em]">{value}</div>
     <p className="text-xs text-muted-foreground mb-3">{detail}</p>
     <ConfidenceBar value={score} signal="bullish" showGradient={false} />
   </div>
