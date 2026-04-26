@@ -5,15 +5,19 @@ import { ConfidenceBar } from "./ConfidenceBar";
 export const WhySignal = () => {
   return (
     <div className="glass-card gradient-border rounded-2xl p-6 lg:p-8">
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-7 flex items-end justify-between gap-6">
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-blue">Featured Insight</p>
-          <h3 className="mt-1 text-2xl font-bold">Why this signal?</h3>
-          <p className="mt-1 text-sm text-muted-foreground">INFY · Infosys Ltd — AI breakdown</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent-blue">Featured insight</p>
+          <h3 className="mt-2 text-2xl font-bold tracking-tight">
+            <span className="font-serif italic font-normal">Why</span> this signal?
+          </h3>
+          <p className="mt-1.5 text-sm text-muted-foreground">
+            INFY · Infosys Ltd <span className="text-border">·</span> AI breakdown
+          </p>
         </div>
-        <div className="text-right">
-          <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Final Score</p>
-          <CountUp end={87} suffix="%" className="text-4xl font-extrabold text-bull tabular-nums" />
+        <div className="text-right shrink-0">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Final score</p>
+          <CountUp end={87} suffix="%" className="mt-1 block text-[40px] leading-none font-extrabold text-bull tabular-nums" />
         </div>
       </div>
 

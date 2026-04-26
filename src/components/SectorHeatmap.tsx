@@ -24,13 +24,15 @@ const colorFor = (s: number) => {
 
 export const SectorHeatmap = () => {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-12">
-      <div className="mb-6 flex items-end justify-between">
+    <section className="mx-auto max-w-7xl px-6 pt-4 pb-12">
+      <div className="mb-7 flex items-end justify-between">
         <div>
-          <h2 className="text-2xl font-bold tracking-tight">Sector Pulse</h2>
-          <p className="mt-1 text-sm text-muted-foreground">Live sentiment across 12 sectors</p>
+          <h2 className="text-3xl font-bold tracking-tight">
+            Sector <span className="font-serif italic font-normal">pulse</span>
+          </h2>
+          <p className="mt-1.5 text-sm text-muted-foreground">Live sentiment across 12 sectors</p>
         </div>
-        <div className="hidden sm:flex items-center gap-3 text-xs text-muted-foreground">
+        <div className="hidden sm:flex items-center gap-3 text-[11px] text-muted-foreground">
           <LegendDot className="bg-destructive" label="Bearish" />
           <LegendDot className="bg-accent" label="Neutral" />
           <LegendDot className="bg-primary" label="Bullish" />
