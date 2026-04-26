@@ -66,6 +66,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         display: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
       },
       backgroundImage: {
         'gradient-signal': 'var(--gradient-signal)',
@@ -103,6 +104,10 @@ export default {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
+        "marquee": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -112,6 +117,7 @@ export default {
         "fill-bar": "fill-bar 1.2s cubic-bezier(0.4, 0, 0.2, 1) both",
         "pulse-glow": "pulse-glow 2.5s ease-in-out infinite",
         "shimmer": "shimmer 3s linear infinite",
+        "marquee": "marquee 60s linear infinite",
       },
     },
   },
