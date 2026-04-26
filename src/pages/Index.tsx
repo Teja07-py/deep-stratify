@@ -78,7 +78,7 @@ const Index = () => {
               <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-accent-blue">
                 {today} · pre-market edition
               </p>
-              <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold leading-[1.02] tracking-tight">
+              <h1 className="font-display text-[clamp(2.5rem,5.4vw,4rem)] font-black leading-[1.0] tracking-[-0.03em]">
                 What to act on,{" "}
                 <span className="font-serif italic font-normal text-muted-foreground">before</span>{" "}
                 the bell.
@@ -124,7 +124,7 @@ const Index = () => {
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
               02 · The reasoning
             </p>
-            <h2 className="mt-2 text-3xl font-bold tracking-tight">
+            <h2 className="mt-2 font-display text-[34px] font-extrabold tracking-[-0.025em]">
               <span className="font-serif italic font-normal">Why</span> the model is convinced.
             </h2>
           </div>

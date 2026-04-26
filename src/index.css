@@ -103,31 +103,62 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "cv11", "ss01", "ss03";
-    background-image: 
-      radial-gradient(ellipse 80% 50% at 50% -10%, hsl(217 100% 58% / 0.08), transparent),
-      radial-gradient(ellipse 60% 40% at 90% 10%, hsl(142 100% 39% / 0.05), transparent);
-    background-attachment: fixed;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+  }
+
+  h1 { font-weight: 900; }
+  h2 { font-weight: 800; }
+  h3, h4 { font-weight: 700; }
 
   /* Tabular numbers for fintech feel */
   .tabular-nums {
     font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum", "lnum", "ss01";
+  }
+
+  .num-display {
+    @apply font-display tabular-nums;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-card/80 backdrop-blur-xl border border-border/60;
-    box-shadow: var(--shadow-card);
+    @apply bg-card/70 backdrop-blur-xl border border-border/50;
+    box-shadow:
+      var(--shadow-card),
+      inset 0 1px 0 0 hsl(213 22% 93% / 0.04);
   }
 
   .glass-card-hover {
-    @apply transition-all duration-300;
+    @apply transition-all duration-500;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
   .glass-card-hover:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-card-hover);
-    border-color: hsl(var(--accent) / 0.4);
+    transform: translateY(-3px);
+    box-shadow:
+      var(--shadow-card-hover),
+      inset 0 1px 0 0 hsl(213 22% 93% / 0.06);
+    border-color: hsl(var(--accent) / 0.35);
+  }
+
+  .elevated {
+    box-shadow:
+      0 1px 0 0 hsl(213 22% 93% / 0.04) inset,
+      0 8px 32px -16px hsl(222 80% 2% / 0.7);
   }
 
   .signal-bar {

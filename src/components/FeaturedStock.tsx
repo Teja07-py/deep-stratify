@@ -28,9 +28,9 @@ export const FeaturedStock = ({ stock }: { stock: StockSignal }) => {
             Top conviction · today
           </div>
 
-          <h2 className="mt-3 flex items-baseline gap-3 text-[40px] leading-[1.05] font-bold tracking-tight">
+          <h2 className="mt-3 flex items-baseline gap-3 font-display text-[44px] leading-[1.02] font-black tracking-[-0.025em]">
             {stock.name}
-            <span className="font-serif italic text-2xl text-muted-foreground">{stock.ticker.toLowerCase()}</span>
+            <span className="font-serif italic font-normal text-2xl text-muted-foreground tracking-normal">{stock.ticker.toLowerCase()}</span>
           </h2>
 
           <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
@@ -44,9 +44,9 @@ export const FeaturedStock = ({ stock }: { stock: StockSignal }) => {
               <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground mb-1">
                 Last
               </div>
-              <div className="text-4xl font-bold tabular-nums leading-none">{stock.price}</div>
+              <div className="num-display text-[40px]">{stock.price}</div>
             </div>
-            <div className={cn("pb-1 text-base font-semibold tabular-nums", tone)}>{stock.change}</div>
+            <div className={cn("pb-1.5 text-base font-semibold tabular-nums", tone)}>{stock.change}</div>
             <div className="ml-auto">
               <SignalBadge signal={stock.signal} />
             </div>
@@ -62,9 +62,9 @@ export const FeaturedStock = ({ stock }: { stock: StockSignal }) => {
             <span className="font-serif italic text-xs text-muted-foreground">scored by 14 models</span>
           </div>
 
-          <div className="mt-2 flex items-baseline gap-2">
-            <CountUp end={stock.confidence} className={cn("text-6xl font-extrabold tabular-nums leading-none", tone)} />
-            <span className={cn("text-2xl font-bold", tone)}>%</span>
+          <div className="mt-3 flex items-baseline gap-1.5">
+            <CountUp end={stock.confidence} className={cn("num-display text-[68px]", tone)} />
+            <span className={cn("font-display text-2xl font-black", tone)}>%</span>
           </div>
 
           <div className="mt-4">
