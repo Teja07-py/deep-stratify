@@ -8,16 +8,16 @@ export const WhySignal = () => {
       <div className="mb-7 flex items-end justify-between gap-6">
         <div>
           <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent-blue">Featured insight</p>
-          <h3 className="mt-2 text-2xl font-bold tracking-tight">
+          <h3 className="mt-2 font-display text-[28px] font-extrabold tracking-[-0.022em]">
             <span className="font-serif italic font-normal">Why</span> this signal?
           </h3>
-          <p className="mt-1.5 text-sm text-muted-foreground">
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             INFY · Infosys Ltd <span className="text-border">·</span> AI breakdown
           </p>
         </div>
         <div className="text-right shrink-0">
           <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Final score</p>
-          <CountUp end={87} suffix="%" className="mt-1 block text-[40px] leading-none font-extrabold text-bull tabular-nums" />
+          <CountUp end={87} suffix="%" className="num-display mt-1.5 block text-[44px] text-bull" />
         </div>
       </div>
 
