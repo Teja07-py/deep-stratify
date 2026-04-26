@@ -13,8 +13,10 @@ export const PremiumReport = () => {
           <span className="text-[10px] font-bold uppercase tracking-wider text-accent-blue">Pre-Market Report</span>
         </div>
 
-        <h3 className="text-2xl font-bold lg:text-3xl">Today's edge, delivered before the bell.</h3>
-        <p className="mt-2 max-w-md text-sm text-muted-foreground">
+        <h3 className="text-3xl font-bold lg:text-4xl tracking-tight leading-[1.1]">
+          Today's edge, <span className="font-serif italic font-normal text-muted-foreground">delivered before</span> the bell.
+        </h3>
+        <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
           47 signals analyzed · 12 high-conviction picks · 3 sectors in focus. Crafted by AI, curated for clarity.
         </p>
 
