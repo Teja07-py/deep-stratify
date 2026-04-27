@@ -1,4 +1,4 @@
-import { Bell, BarChart3, Newspaper, Search, Sparkles, User, Zap, Inbox } from "lucide-react";
+import { Bell, BarChart3, Newspaper, Search, Sparkles, Star, User, Zap, Inbox } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
@@ -6,6 +6,7 @@ const navItems = [
   { to: "/results", label: "Results", icon: BarChart3 },
   { to: "/strike-metrics", label: "Strike Metrics", icon: Zap },
   { to: "/news", label: "News", icon: Newspaper },
+  { to: "/ratings", label: "Ratings", icon: Star },
   { to: "/orders", label: "Orders", icon: Inbox },
 ];
 
