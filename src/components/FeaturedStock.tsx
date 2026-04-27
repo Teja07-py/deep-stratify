@@ -30,12 +30,12 @@ export const FeaturedStock = ({ stock }: { stock: StockSignal }) => {
 
           <h2 className="mt-3 flex items-baseline gap-3 font-display text-[44px] leading-[1.02] font-black tracking-[-0.025em]">
             {stock.name}
-            <span className="font-serif italic font-normal text-2xl text-muted-foreground tracking-normal">{stock.ticker.toLowerCase()}</span>
+            <span className="font-display font-semibold text-2xl text-muted-foreground tracking-tight">{stock.ticker}</span>
           </h2>
 
           <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
             Three pillars aligned. Insider accumulation paired with an{" "}
-            <span className="font-serif italic text-foreground/90">unusually clean</span> earnings beat — the kind of
+            <span className="text-highlight">unusually clean</span> earnings beat — the kind of
             setup we wait weeks for.
           </p>
 
@@ -57,9 +57,9 @@ export const FeaturedStock = ({ stock }: { stock: StockSignal }) => {
         <div className="rounded-2xl border border-border/50 bg-background/30 p-6 backdrop-blur-md">
           <div className="flex items-baseline justify-between">
             <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-              Conviction
+              Strike Strength
             </span>
-            <span className="font-serif italic text-xs text-muted-foreground">scored by 14 models</span>
+            <span className="text-[11px] text-muted-foreground">scored by 14 models</span>
           </div>
 
           <div className="mt-3 flex items-baseline gap-1.5">

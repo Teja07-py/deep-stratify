@@ -11,7 +11,7 @@ interface Alert {
 }
 
 const seed: Alert[] = [
-  { id: 1, ticker: "INFY", message: "Turned Bullish — Insider buying detected", signal: "bullish", time: "2m ago" },
+  { id: 1, ticker: "INFY", message: "Strike triggered — Insider buying detected", signal: "bullish", time: "2m ago" },
   { id: 2, ticker: "TATAMOTORS", message: "Earnings beat — 12% revenue surprise", signal: "bullish", time: "8m ago" },
   { id: 3, ticker: "ADANIPORTS", message: "Bearish reversal — heavy block sell", signal: "bearish", time: "14m ago" },
   { id: 4, ticker: "HDFCBANK", message: "Sentiment shift — analyst upgrades stack", signal: "bullish", time: "22m ago" },
@@ -41,7 +41,7 @@ export const AlertFeed = () => {
           <div className="relative flex h-7 w-7 items-center justify-center rounded-lg bg-accent/15">
             <Zap className="h-3.5 w-3.5 text-accent-blue" />
           </div>
-          <h3 className="text-base font-bold">Live Signal Feed</h3>
+          <h3 className="text-base font-bold">Live Strike Feed</h3>
         </div>
         <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
           <span className="relative flex h-2 w-2">
