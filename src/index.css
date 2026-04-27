@@ -198,4 +198,31 @@
   .text-accent-blue { color: hsl(var(--accent)); }
   .bg-bull-soft { background: var(--gradient-bull); }
   .bg-bear-soft { background: var(--gradient-bear); }
+
+  /* Replaces italic emphasis — accent color + slight weight bump */
+  .text-highlight {
+    color: hsl(var(--accent));
+    font-weight: 600;
+  }
+  .text-highlight-soft {
+    color: hsl(var(--accent) / 0.92);
+    font-weight: 500;
+  }
+
+  /* Attention tags for news (replaces bullish/bearish in editorial contexts) */
+  .attention-full {
+    color: hsl(38 95% 60%);
+    background: hsl(38 95% 55% / 0.10);
+    border-color: hsl(38 95% 55% / 0.30);
+  }
+  .attention-partial {
+    color: hsl(217 90% 70%);
+    background: hsl(217 90% 60% / 0.10);
+    border-color: hsl(217 90% 60% / 0.28);
+  }
+  .attention-neutral {
+    color: hsl(215 11% 70%);
+    background: hsl(215 15% 40% / 0.15);
+    border-color: hsl(215 15% 40% / 0.30);
+  }
 }
