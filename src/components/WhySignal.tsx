@@ -9,14 +9,14 @@ export const WhySignal = () => {
         <div>
           <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent-blue">Featured insight</p>
           <h3 className="mt-2 font-display text-[28px] font-extrabold tracking-[-0.022em]">
-            <span className="font-serif italic font-normal">Why</span> this signal?
+            <span className="text-highlight">Why</span> this signal?
           </h3>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             INFY · Infosys Ltd <span className="text-border">·</span> AI breakdown
           </p>
         </div>
         <div className="text-right shrink-0">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Final score</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Strike Rate</p>
           <CountUp end={87} suffix="%" className="num-display mt-1.5 block text-[44px] text-bull" />
         </div>
       </div>
@@ -29,7 +29,7 @@ export const WhySignal = () => {
 
       <div className="mt-6 rounded-xl border border-primary/20 bg-bull-soft p-4">
         <p className="text-sm leading-relaxed text-foreground">
-          <span className="font-semibold text-bull">Conviction signal.</span>{" "}
+          <span className="font-semibold text-bull">High Strike Opportunity.</span>{" "}
           <span className="text-muted-foreground">
             All three pillars align positively. Insider accumulation paired with earnings momentum suggests sustained upside through next quarter.
           </span>

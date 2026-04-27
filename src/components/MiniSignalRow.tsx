@@ -16,7 +16,7 @@ export const MiniSignalRow = ({ stock, index = 0 }: { stock: StockSignal; index?
       <div className="min-w-0 flex-1">
         <div className="flex items-baseline gap-2">
           <span className="text-sm font-bold tracking-wide">{stock.ticker}</span>
-          <span className="font-serif italic text-xs text-muted-foreground truncate">{stock.name}</span>
+          <span className="text-xs text-muted-foreground truncate">{stock.name}</span>
         </div>
         <div className="mt-0.5 text-[11px] text-muted-foreground">
           {stock.reasons.earnings} · {stock.reasons.insider}

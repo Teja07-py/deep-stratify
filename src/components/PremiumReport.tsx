@@ -14,7 +14,7 @@ export const PremiumReport = () => {
         </div>
 
         <h3 className="text-3xl font-bold lg:text-4xl tracking-tight leading-[1.1]">
-          Today's edge, <span className="font-serif italic font-normal text-muted-foreground">delivered before</span> the bell.
+          Today's edge, <span className="text-highlight">delivered before the bell</span>.
         </h3>
         <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
           47 signals analyzed · 12 high-conviction picks · 3 sectors in focus. Crafted by AI, curated for clarity.

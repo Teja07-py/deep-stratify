@@ -28,9 +28,9 @@ export const SectorHeatmap = () => {
       <div className="mb-7 flex items-end justify-between">
         <div>
           <h2 className="text-3xl font-bold tracking-tight">
-            Sector <span className="font-serif italic font-normal">pulse</span>
+            Sector <span className="text-highlight">Strike</span>
           </h2>
-          <p className="mt-1.5 text-sm text-muted-foreground">Live sentiment across 12 sectors</p>
+          <p className="mt-1.5 text-sm text-muted-foreground">Live Strike Rate across 12 sectors</p>
         </div>
         <div className="hidden sm:flex items-center gap-3 text-[11px] text-muted-foreground">
           <LegendDot className="bg-destructive" label="Bearish" />
