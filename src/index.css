@@ -4,53 +4,53 @@
 
 @layer base {
   :root {
-    /* Premium Dark Fintech Design System */
-    --background: 222 39% 7%;           /* #0B0F19 */
-    --foreground: 213 22% 93%;          /* #E6EDF3 */
+    /* Trackit — Premium market intelligence palette */
+    --background: 222 45% 4%;           /* #05070D deep black */
+    --foreground: 220 14% 96%;          /* #F3F4F6 soft white */
 
-    --card: 222 30% 11%;                /* #121826 */
-    --card-foreground: 213 22% 93%;
+    --card: 222 35% 8%;                 /* layered surface */
+    --card-foreground: 220 14% 96%;
 
-    --popover: 222 30% 11%;
-    --popover-foreground: 213 22% 93%;
+    --popover: 222 35% 8%;
+    --popover-foreground: 220 14% 96%;
 
-    --primary: 142 100% 39%;            /* #00C853 emerald bullish */
-    --primary-foreground: 222 39% 7%;
-    --primary-glow: 142 100% 50%;
+    --primary: 217 91% 60%;             /* #3B82F6 electric blue */
+    --primary-foreground: 222 45% 4%;
+    --primary-glow: 217 95% 70%;
 
-    --secondary: 222 25% 14%;
-    --secondary-foreground: 213 22% 93%;
+    --secondary: 222 25% 12%;
+    --secondary-foreground: 220 14% 96%;
 
-    --muted: 222 20% 16%;
-    --muted-foreground: 215 11% 58%;    /* #8B949E */
+    --muted: 222 20% 14%;
+    --muted-foreground: 215 14% 62%;
 
-    --accent: 217 100% 58%;             /* #2979FF electric blue */
-    --accent-foreground: 213 22% 93%;
-    --accent-glow: 217 100% 65%;
+    --accent: 217 91% 60%;              /* electric blue (same as primary) */
+    --accent-foreground: 220 14% 96%;
+    --accent-glow: 217 95% 70%;
 
-    --destructive: 14 100% 50%;         /* #FF3D00 bearish */
-    --destructive-foreground: 213 22% 93%;
-    --destructive-glow: 14 100% 60%;
+    --destructive: 359 100% 65%;        /* #FF4D4F crimson */
+    --destructive-foreground: 220 14% 96%;
+    --destructive-glow: 359 100% 72%;
 
-    --border: 215 25% 17%;              /* #1F2937 */
-    --input: 215 25% 17%;
-    --ring: 217 100% 58%;
+    --border: 222 25% 14%;
+    --input: 222 25% 14%;
+    --ring: 217 91% 60%;
 
     --radius: 1rem;
 
     /* Signature gradients */
-    --gradient-signal: linear-gradient(90deg, hsl(var(--destructive)) 0%, hsl(45 100% 55%) 50%, hsl(var(--primary)) 100%);
-    --gradient-bull: linear-gradient(135deg, hsl(142 100% 39% / 0.15), hsl(142 100% 50% / 0.05));
-    --gradient-bear: linear-gradient(135deg, hsl(14 100% 50% / 0.15), hsl(14 100% 60% / 0.05));
-    --gradient-card: linear-gradient(135deg, hsl(222 30% 13%) 0%, hsl(222 30% 10%) 100%);
-    --gradient-glow: radial-gradient(circle at 50% 0%, hsl(217 100% 58% / 0.15), transparent 70%);
+    --gradient-signal: linear-gradient(90deg, hsl(var(--destructive)) 0%, hsl(217 91% 60% / 0.9) 100%);
+    --gradient-bull: linear-gradient(135deg, hsl(217 91% 60% / 0.16), hsl(217 95% 70% / 0.05));
+    --gradient-bear: linear-gradient(135deg, hsl(359 100% 65% / 0.16), hsl(359 100% 72% / 0.05));
+    --gradient-card: linear-gradient(135deg, hsl(222 35% 9%) 0%, hsl(222 35% 6%) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 0%, hsl(217 91% 60% / 0.18), transparent 70%);
 
     /* Shadows & glows */
-    --shadow-card: 0 4px 24px -8px hsl(222 80% 2% / 0.6);
-    --shadow-card-hover: 0 12px 40px -12px hsl(222 80% 2% / 0.8);
-    --glow-bull: 0 0 24px hsl(142 100% 39% / 0.4);
-    --glow-bear: 0 0 24px hsl(14 100% 50% / 0.4);
-    --glow-accent: 0 0 24px hsl(217 100% 58% / 0.4);
+    --shadow-card: 0 4px 24px -8px hsl(222 80% 1% / 0.7);
+    --shadow-card-hover: 0 12px 40px -12px hsl(222 80% 1% / 0.85);
+    --glow-bull: 0 0 24px hsl(217 91% 60% / 0.4);
+    --glow-bear: 0 0 24px hsl(359 100% 65% / 0.4);
+    --glow-accent: 0 0 24px hsl(217 91% 60% / 0.4);
 
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -67,26 +67,25 @@
   }
 
   .dark {
-    /* Same — this app is dark by default */
-    --background: 222 39% 7%;
-    --foreground: 213 22% 93%;
-    --card: 222 30% 11%;
-    --card-foreground: 213 22% 93%;
-    --popover: 222 30% 11%;
-    --popover-foreground: 213 22% 93%;
-    --primary: 142 100% 39%;
-    --primary-foreground: 222 39% 7%;
-    --secondary: 222 25% 14%;
-    --secondary-foreground: 213 22% 93%;
-    --muted: 222 20% 16%;
-    --muted-foreground: 215 11% 58%;
-    --accent: 217 100% 58%;
-    --accent-foreground: 213 22% 93%;
-    --destructive: 14 100% 50%;
-    --destructive-foreground: 213 22% 93%;
-    --border: 215 25% 17%;
-    --input: 215 25% 17%;
-    --ring: 217 100% 58%;
+    --background: 222 45% 4%;
+    --foreground: 220 14% 96%;
+    --card: 222 35% 8%;
+    --card-foreground: 220 14% 96%;
+    --popover: 222 35% 8%;
+    --popover-foreground: 220 14% 96%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 45% 4%;
+    --secondary: 222 25% 12%;
+    --secondary-foreground: 220 14% 96%;
+    --muted: 222 20% 14%;
+    --muted-foreground: 215 14% 62%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 220 14% 96%;
+    --destructive: 359 100% 65%;
+    --destructive-foreground: 220 14% 96%;
+    --border: 222 25% 14%;
+    --input: 222 25% 14%;
+    --ring: 217 91% 60%;
   }
 }
 

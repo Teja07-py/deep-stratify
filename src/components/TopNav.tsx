@@ -1,4 +1,5 @@
-import { Bell, BarChart3, Newspaper, Search, Sparkles, Star, User, Zap, Inbox } from "lucide-react";
+import { Bell, BarChart3, Newspaper, Search, Star, User, Zap, Inbox } from "lucide-react";
+import TrackitMark from "./TrackitMark";
 import { NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
@@ -18,14 +19,14 @@ export const TopNav = () => {
 
       <div className="mx-auto flex h-[64px] max-w-7xl items-center gap-6 px-6">
         {/* Logo */}
-        <NavLink to="/" className="flex items-center gap-2.5 shrink-0">
-          <div className="relative flex h-8 w-8 items-center justify-center rounded-[10px] bg-gradient-to-br from-primary to-accent">
-            <Sparkles className="h-4 w-4 text-background" strokeWidth={2.75} />
-            <div className="absolute inset-0 rounded-[10px] bg-gradient-to-br from-primary to-accent opacity-40 blur-md -z-10" />
+        <NavLink to="/" className="flex items-center gap-2.5 shrink-0 group">
+          <div className="relative flex h-9 w-9 items-center justify-center rounded-[10px] bg-gradient-to-br from-card to-background ring-1 ring-border/70 text-foreground transition-transform group-hover:scale-[1.03]">
+            <TrackitMark className="h-[18px] w-[18px]" />
+            <div className="absolute inset-0 rounded-[10px] bg-accent/20 opacity-0 blur-md -z-10 group-hover:opacity-60 transition-opacity" />
           </div>
-          <div className="flex items-baseline gap-1">
-            <span className="text-[17px] font-bold tracking-tight leading-none">Alpha</span>
-            <span className="text-[17px] font-medium leading-none text-muted-foreground">Strike</span>
+          <div className="flex items-baseline gap-px">
+            <span className="text-[17px] font-bold tracking-tight leading-none">Track</span>
+            <span className="text-[17px] font-bold tracking-tight leading-none text-accent">it</span>
           </div>
         </NavLink>
 

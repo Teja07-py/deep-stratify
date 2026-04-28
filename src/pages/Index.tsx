@@ -145,7 +145,7 @@ const Index = () => {
         <footer className="mx-auto max-w-7xl px-6 py-12 border-t border-border/40">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-xs text-muted-foreground">
             <span>
-              Alpha Strike <span className="text-highlight-soft">· intelligence for the modern investor</span>
+              Trackit <span className="text-highlight-soft">· intelligence for the modern investor</span>
             </span>
             <span>Not financial advice · Past performance ≠ future results</span>
           </div>
