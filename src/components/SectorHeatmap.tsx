@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { getSectorSymbol, normalizeSector } from "@/utils/sectorSymbols";
 
 const sectors = [
   { name: "IT", score: 78 },
@@ -53,7 +54,10 @@ export const SectorHeatmap = () => {
               )}
               style={{ animationDelay: `${i * 50}ms` }}
             >
-              <div className="text-sm font-semibold text-foreground">{s.name}</div>
+              <div className="flex items-center gap-1.5 text-sm font-semibold text-foreground">
+                <span aria-hidden className="text-base leading-none">{getSectorSymbol(s.name)}</span>
+                <span>{normalizeSector(s.name)}</span>
+              </div>
               <div className={cn("mt-2 text-2xl font-extrabold tabular-nums", c.text)}>{s.score}</div>
               <div className="mt-2 h-1 w-full overflow-hidden rounded-full bg-background/40">
                 <div
