@@ -2,6 +2,7 @@ import { Bell, BarChart3, Newspaper, Sparkles, Star, User, Zap, Inbox } from "lu
 import { NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { SearchBar } from "./SearchBar";
+import trackitLogo from "@/assets/trackit-logo.png";
 
 const navItems = [
   { to: "/results", label: "Results", icon: BarChart3 },
@@ -20,17 +21,20 @@ export const TopNav = () => {
       <div className="mx-auto flex h-[64px] max-w-7xl items-center gap-6 px-6">
         {/* Logo */}
         <NavLink to="/" className="flex items-center gap-2.5 shrink-0">
-          <div className="relative flex h-9 w-9 items-center justify-center rounded-[10px] bg-black p-1.5">
+          <div className="relative flex h-9 w-9 items-center justify-center rounded-[10px] bg-black p-1 ring-1 ring-white/10">
             <img
-              src="/placeholder.svg"
-              alt="TrackiT logo"
+              src={trackitLogo}
+              alt="TracKit logo"
+              width={36}
+              height={36}
               className="h-full w-full object-contain"
             />
-            <div className="absolute inset-0 rounded-[10px] bg-gradient-to-br from-primary to-accent opacity-30 blur-md -z-10" />
+            <div className="absolute inset-0 rounded-[10px] bg-gradient-to-br from-[#3B82F6] to-[#DC143C] opacity-25 blur-md -z-10" />
           </div>
-          <div className="flex items-baseline gap-1">
-            <span className="text-[17px] font-bold tracking-tight leading-none">Tracki</span>
-            <span className="text-[17px] font-bold leading-none text-accent">T</span>
+          <div className="flex items-baseline">
+            <span className="text-[17px] font-bold tracking-tight leading-none">Trac</span>
+            <span className="text-[17px] font-bold tracking-tight leading-none text-[#DC143C]">K</span>
+            <span className="text-[17px] font-bold tracking-tight leading-none">it</span>
           </div>
         </NavLink>
 
