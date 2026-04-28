@@ -1,6 +1,7 @@
-import { Bell, BarChart3, Newspaper, Search, Sparkles, Star, User, Zap, Inbox } from "lucide-react";
+import { Bell, BarChart3, Newspaper, Sparkles, Star, User, Zap, Inbox } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { SearchBar } from "./SearchBar";
 
 const navItems = [
   { to: "/results", label: "Results", icon: BarChart3 },
@@ -56,9 +57,7 @@ export const TopNav = () => {
 
         {/* Right cluster */}
         <div className="flex items-center gap-1.5">
-          <button className="hidden sm:flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-card hover:text-foreground">
-            <Search className="h-[15px] w-[15px]" />
-          </button>
+          <SearchBar />
           <button className="relative flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-card hover:text-foreground">
             <Bell className="h-[15px] w-[15px]" />
             <span className="absolute right-2 top-2 h-1.5 w-1.5 rounded-full bg-destructive ring-2 ring-background animate-pulse-glow" />
