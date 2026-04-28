@@ -20,13 +20,17 @@ export const TopNav = () => {
       <div className="mx-auto flex h-[64px] max-w-7xl items-center gap-6 px-6">
         {/* Logo */}
         <NavLink to="/" className="flex items-center gap-2.5 shrink-0">
-          <div className="relative flex h-8 w-8 items-center justify-center rounded-[10px] bg-gradient-to-br from-primary to-accent">
-            <Sparkles className="h-4 w-4 text-background" strokeWidth={2.75} />
-            <div className="absolute inset-0 rounded-[10px] bg-gradient-to-br from-primary to-accent opacity-40 blur-md -z-10" />
+          <div className="relative flex h-9 w-9 items-center justify-center rounded-[10px] bg-black p-1.5">
+            <img
+              src="/placeholder.svg"
+              alt="TrackiT logo"
+              className="h-full w-full object-contain"
+            />
+            <div className="absolute inset-0 rounded-[10px] bg-gradient-to-br from-primary to-accent opacity-30 blur-md -z-10" />
           </div>
           <div className="flex items-baseline gap-1">
-            <span className="text-[17px] font-bold tracking-tight leading-none">Alpha</span>
-            <span className="text-[17px] font-medium leading-none text-muted-foreground">Strike</span>
+            <span className="text-[17px] font-bold tracking-tight leading-none">Tracki</span>
+            <span className="text-[17px] font-bold leading-none text-accent">T</span>
           </div>
         </NavLink>
 
