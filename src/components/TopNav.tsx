@@ -49,7 +49,7 @@ export const TopNav = () => {
                   "group relative inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] font-medium transition-all duration-200",
                   "hover:-translate-y-px",
                   isActive
-                    ? "text-foreground bg-accent/10 ring-1 ring-accent/30 shadow-[0_0_18px_-6px_hsl(var(--accent)/0.55)]"
+                    ? "text-foreground ring-1 is-active-glow"
                     : "text-muted-foreground hover:text-foreground hover:bg-card/60",
                 )
               }
