@@ -1,15 +1,14 @@
-import { Bell, BarChart3, Newspaper, Sparkles, Star, User, Zap, Inbox } from "lucide-react";
+import { Bell, BarChart3, Newspaper, Star, User, Zap, Inbox } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { SearchBar } from "./SearchBar";
-import trackitLogo from "@/assets/trackit-logo.png";
 
-const navItems = [
+const primaryNav = [
   { to: "/results", label: "Results", icon: BarChart3 },
-  { to: "/strike-metrics", label: "Strike Metrics", icon: Zap },
   { to: "/news", label: "News", icon: Newspaper },
   { to: "/ratings", label: "Ratings", icon: Star },
   { to: "/orders", label: "Orders", icon: Inbox },
+  { to: "/watchlist", label: "Watchlist", icon: Star },
 ];
 
 export const TopNav = () => {
@@ -19,28 +18,24 @@ export const TopNav = () => {
       <div className="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
 
       <div className="mx-auto flex h-[64px] max-w-7xl items-center gap-6 px-6">
-        {/* Logo */}
-        <NavLink to="/" className="flex items-center gap-2.5 shrink-0">
-          <div className="relative flex h-9 w-9 items-center justify-center rounded-[10px] bg-black p-1 ring-1 ring-white/10">
-            <img
-              src={trackitLogo}
-              alt="TracKit logo"
-              width={36}
-              height={36}
-              className="h-full w-full object-contain"
+        {/* Logo + Brand */}
+        <NavLink to="/" className="flex items-center gap-2.5 shrink-0 group">
+          <div className="relative flex h-9 w-9 items-center justify-center rounded-[10px] bg-black p-1.5 ring-1 ring-white/10 transition-shadow group-hover:shadow-[0_0_18px_-2px_hsl(var(--accent)/var(--glow-intensity))]">
+            <Zap
+              className="h-full w-full text-[#3B82F6] drop-shadow-[0_0_6px_hsl(217_91%_60%/0.6)]"
+              fill="currentColor"
+              strokeWidth={1.5}
             />
             <div className="absolute inset-0 rounded-[10px] bg-gradient-to-br from-[#3B82F6] to-[#DC143C] opacity-25 blur-md -z-10" />
           </div>
-          <div className="flex items-baseline">
-            <span className="text-[17px] font-bold tracking-tight leading-none">Trac</span>
-            <span className="text-[17px] font-bold tracking-tight leading-none text-[#DC143C]">K</span>
-            <span className="text-[17px] font-bold tracking-tight leading-none">it</span>
-          </div>
+          <span className="text-[17px] font-bold tracking-tight leading-none bg-gradient-to-r from-[#3B82F6] via-foreground to-[#DC143C] bg-clip-text text-transparent">
+            TracKit
+          </span>
         </NavLink>
 
-        {/* Nav links */}
+        {/* Primary nav */}
         <nav className="hidden lg:flex items-center gap-0.5 ml-3">
-          {navItems.map(({ to, label, icon: Icon }) => (
+          {primaryNav.map(({ to, label, icon: Icon }) => (
             <NavLink
               key={to}
               to={to}
@@ -62,6 +57,25 @@ export const TopNav = () => {
 
         {/* spacer */}
         <div className="flex-1" />
+
+        {/* Strike Metrics — anchored far right */}
+        <nav className="hidden lg:flex items-center">
+          <NavLink
+            to="/strike-metrics"
+            className={({ isActive }) =>
+              cn(
+                "group relative inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-semibold transition-all duration-200",
+                "border hover:-translate-y-px",
+                isActive
+                  ? "text-foreground border-accent/50 bg-accent/15 shadow-[0_0_22px_-4px_hsl(var(--accent)/calc(var(--glow-intensity)+0.15))]"
+                  : "text-foreground/80 border-border/60 bg-card/40 hover:text-foreground hover:border-accent/40 hover:shadow-[0_0_14px_-4px_hsl(var(--accent)/var(--glow-intensity))]",
+              )
+            }
+          >
+            <Zap className="h-[14px] w-[14px]" strokeWidth={2.5} />
+            <span>Strike Metrics</span>
+          </NavLink>
+        </nav>
 
         {/* Right cluster */}
         <div className="flex items-center gap-1.5">
