@@ -180,6 +180,13 @@
     box-shadow: var(--glow-accent);
   }
 
+  /* Subtle electric-blue glow — applied ONLY to active nav items & selected filters */
+  .is-active-glow {
+    background-color: hsl(var(--accent) / 0.10);
+    box-shadow: var(--glow-active);
+    border-color: hsl(var(--accent) / 0.30);
+  }
+
   .gradient-border {
     position: relative;
   }
