@@ -68,25 +68,25 @@
 
   .dark {
     /* Same — this app is dark by default */
-    --background: 222 39% 7%;
-    --foreground: 213 22% 93%;
-    --card: 222 30% 11%;
-    --card-foreground: 213 22% 93%;
-    --popover: 222 30% 11%;
-    --popover-foreground: 213 22% 93%;
-    --primary: 142 100% 39%;
-    --primary-foreground: 222 39% 7%;
-    --secondary: 222 25% 14%;
-    --secondary-foreground: 213 22% 93%;
-    --muted: 222 20% 16%;
-    --muted-foreground: 215 11% 58%;
-    --accent: 217 100% 58%;
-    --accent-foreground: 213 22% 93%;
-    --destructive: 14 100% 50%;
-    --destructive-foreground: 213 22% 93%;
-    --border: 215 25% 17%;
-    --input: 215 25% 17%;
-    --ring: 217 100% 58%;
+    --background: 222 50% 4%;
+    --foreground: 220 14% 96%;
+    --card: 222 40% 8%;
+    --card-foreground: 220 14% 96%;
+    --popover: 222 40% 8%;
+    --popover-foreground: 220 14% 96%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 50% 4%;
+    --secondary: 222 30% 12%;
+    --secondary-foreground: 220 14% 96%;
+    --muted: 222 25% 14%;
+    --muted-foreground: 220 9% 65%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 220 14% 96%;
+    --destructive: 359 100% 65%;
+    --destructive-foreground: 220 14% 96%;
+    --border: 215 28% 14%;
+    --input: 215 28% 14%;
+    --ring: 217 91% 60%;
   }
 }
 
