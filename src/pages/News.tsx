@@ -136,12 +136,28 @@ const priorityDot: Record<Priority, string> = {
   low: "bg-muted-foreground/60",
 };
 
+const priorityBorder: Record<Priority, string> = {
+  high: "border-l-[3px] border-l-destructive",
+  medium: "border-l-[3px] border-l-accent",
+  low: "border-l-[3px] border-l-border/60",
+};
+
+const priorityHeadline: Record<Priority, string> = {
+  high: "font-extrabold text-foreground",
+  medium: "font-bold text-foreground/95",
+  low: "font-semibold text-foreground/85",
+};
+
+const sourceUrl = (n: NewsItem) =>
+  `https://www.google.com/search?q=${encodeURIComponent(n.headline + " " + n.source)}`;
+
 const News = () => {
   const [category, setCategory] = useState<"All" | Category>("All");
   const [priority, setPriority] = useState<"all" | Priority>("all");
   const [activeTickers, setActiveTickers] = useState<string[]>([]);
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<SortKey>("latest");
+  const [expandedId, setExpandedId] = useState<number | null>(null);
 
   const toggleTicker = (t: string) =>
     setActiveTickers((prev) => (prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]));
