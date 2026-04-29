@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Flame, Zap, Circle, Search, ArrowDownUp, X } from "lucide-react";
+import { Flame, Zap, Circle, Search, ArrowDownUp, X, ChevronDown, ExternalLink } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { MarketStrikeHeader } from "@/components/MarketStrikeHeader";
 import { cn } from "@/lib/utils";
@@ -136,12 +136,28 @@ const priorityDot: Record<Priority, string> = {
   low: "bg-muted-foreground/60",
 };
 
+const priorityBorder: Record<Priority, string> = {
+  high: "border-l-[3px] border-l-destructive",
+  medium: "border-l-[3px] border-l-accent",
+  low: "border-l-[3px] border-l-border/60",
+};
+
+const priorityHeadline: Record<Priority, string> = {
+  high: "font-extrabold text-foreground",
+  medium: "font-bold text-foreground/95",
+  low: "font-semibold text-foreground/85",
+};
+
+const sourceUrl = (n: NewsItem) =>
+  `https://www.google.com/search?q=${encodeURIComponent(n.headline + " " + n.source)}`;
+
 const News = () => {
   const [category, setCategory] = useState<"All" | Category>("All");
   const [priority, setPriority] = useState<"all" | Priority>("all");
   const [activeTickers, setActiveTickers] = useState<string[]>([]);
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<SortKey>("latest");
+  const [expandedId, setExpandedId] = useState<number | null>(null);
 
   const toggleTicker = (t: string) =>
     setActiveTickers((prev) => (prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]));
@@ -318,10 +334,16 @@ const News = () => {
           {filtered.map((n, i) => {
             const m = attentionMeta[n.attention];
             const Icon = m.icon;
+            const isOpen = expandedId === n.id;
             return (
               <article
                 key={n.id}
-                className="group glass-card glass-card-hover rounded-2xl p-5 lg:p-6 animate-fade-in"
+                onClick={() => setExpandedId(isOpen ? null : n.id)}
+                className={cn(
+                  "group glass-card glass-card-hover rounded-2xl p-5 lg:p-6 animate-fade-in cursor-pointer",
+                  priorityBorder[n.priority],
+                  isOpen && "is-active-glow",
+                )}
                 style={{ animationDelay: `${i * 40}ms` }}
               >
                 <div className="flex items-start gap-6">
@@ -340,7 +362,7 @@ const News = () => {
                       </span>
                     </div>
 
-                    <h3 className="font-display text-[19px] font-bold leading-snug tracking-tight text-foreground">
+                    <h3 className={cn("font-display text-[19px] leading-snug tracking-tight", priorityHeadline[n.priority])}>
                       {n.headline}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{n.summary}</p>
@@ -362,6 +384,7 @@ const News = () => {
                         </span>
                       ))}
                     </div>
+                    <ChevronDown className={cn("h-3.5 w-3.5 mt-2 text-muted-foreground transition-transform", isOpen && "rotate-180 text-accent")} />
                   </div>
                 </div>
 
@@ -371,6 +394,37 @@ const News = () => {
                       {t}
                     </span>
                   ))}
+                </div>
+
+                {/* Expandable detail */}
+                <div
+                  className={cn(
+                    "grid transition-all duration-300 ease-out",
+                    isOpen ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0",
+                  )}
+                >
+                  <div className="overflow-hidden">
+                    <div className="border-t border-border/40 pt-4 space-y-3">
+                      <p className="text-[13px] leading-relaxed text-foreground/85">
+                        {n.summary} {n.matters}
+                      </p>
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] uppercase tracking-wider text-muted-foreground">
+                        <span><span className="text-foreground/60">Source ·</span> <span className="text-foreground/90">{n.source}</span></span>
+                        <span><span className="text-foreground/60">Posted ·</span> <span className="text-foreground/90">{n.time}</span></span>
+                        <span><span className="text-foreground/60">Category ·</span> <span className="text-foreground/90">{n.category}</span></span>
+                      </div>
+                      <a
+                        href={sourceUrl(n)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#3B82F6] hover:underline underline-offset-4 transition-all hover:[text-shadow:0_0_8px_hsl(217_91%_60%/0.5)]"
+                      >
+                        Read Full Article
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </article>
             );
