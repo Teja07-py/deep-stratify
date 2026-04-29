@@ -2,6 +2,7 @@ import { ArrowUpRight, Calendar, TrendingUp, BarChart3 } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { MarketStrikeHeader } from "@/components/MarketStrikeHeader";
 import { CountUp } from "@/components/CountUp";
+import { WatchlistButton } from "@/components/WatchlistButton";
 import { cn } from "@/lib/utils";
 
 interface EarningsRow {
@@ -67,6 +68,9 @@ const Results = () => {
                   className="group flex items-center gap-4 rounded-xl border border-border/50 bg-secondary/30 px-4 py-3 transition-all hover:border-accent/40 hover:bg-secondary/60 animate-fade-in"
                   style={{ animationDelay: `${i * 60}ms` }}
                 >
+                  <WatchlistButton
+                    item={{ ticker: r.ticker, name: r.name, metric: `${r.strikeRate}%`, metricLabel: "Strike Rate" }}
+                  />
                   <div className="w-24 shrink-0">
                     <div className="text-sm font-bold tracking-wide">{r.ticker}</div>
                     <div className="text-[11px] text-muted-foreground truncate">{r.name}</div>
