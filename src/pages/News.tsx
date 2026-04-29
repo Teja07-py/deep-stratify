@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Flame, Zap, Circle, Search, ArrowDownUp, X } from "lucide-react";
+import { Flame, Zap, Circle, Search, ArrowDownUp, X, ChevronDown, ExternalLink } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { MarketStrikeHeader } from "@/components/MarketStrikeHeader";
 import { cn } from "@/lib/utils";
