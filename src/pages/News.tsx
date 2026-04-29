@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Flame, Zap, Circle, Search, ArrowDownUp, X, ChevronDown, ExternalLink } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { MarketStrikeHeader } from "@/components/MarketStrikeHeader";
+import { WatchlistButton } from "@/components/WatchlistButton";
 import { cn } from "@/lib/utils";
 
 type Attention = "full" | "partial" | "neutral";
@@ -377,10 +378,15 @@ const News = () => {
 
                   <div className="hidden md:flex flex-col items-end gap-1.5 shrink-0 pl-4 border-l border-border/40">
                     <span className="text-[9px] uppercase tracking-[0.18em] text-muted-foreground mb-1">Impacted</span>
-                    <div className="flex flex-wrap justify-end gap-1.5 max-w-[180px]">
+                    <div className="flex flex-wrap justify-end items-center gap-1.5 max-w-[200px]">
                       {n.tickers.map((t) => (
-                        <span key={t} className="rounded-md border border-border/60 bg-secondary/50 px-2 py-0.5 text-[10px] font-bold tracking-wide text-foreground/85 transition-colors group-hover:border-accent/40 group-hover:text-foreground">
+                        <span key={t} className="inline-flex items-center gap-1 rounded-md border border-border/60 bg-secondary/50 px-2 py-0.5 text-[10px] font-bold tracking-wide text-foreground/85 transition-colors group-hover:border-accent/40 group-hover:text-foreground">
                           {t}
+                          <WatchlistButton
+                            item={{ ticker: t, news: [{ headline: n.headline, time: n.time }], hasUpdate: true }}
+                            size="sm"
+                            className="!h-4 !w-4 border-0 bg-transparent ml-0.5"
+                          />
                         </span>
                       ))}
                     </div>

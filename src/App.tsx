@@ -10,28 +10,33 @@ import StrikeMetrics from "./pages/StrikeMetrics.tsx";
 import News from "./pages/News.tsx";
 import Ratings from "./pages/Ratings.tsx";
 import Orders from "./pages/Orders.tsx";
+import Watchlist from "./pages/Watchlist.tsx";
 import AmbientBackground from "./components/AmbientBackground";
+import { WatchlistProvider } from "./hooks/useWatchlist";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <AmbientBackground />
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/results" element={<Results />} />
-          <Route path="/strike-metrics" element={<StrikeMetrics />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/ratings" element={<Ratings />} />
-          <Route path="/orders" element={<Orders />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <WatchlistProvider>
+        <AmbientBackground />
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/results" element={<Results />} />
+            <Route path="/strike-metrics" element={<StrikeMetrics />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/ratings" element={<Ratings />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/watchlist" element={<Watchlist />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </WatchlistProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

@@ -1,6 +1,7 @@
 import { ArrowUpRight, Clock, Filter } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { MarketStrikeHeader } from "@/components/MarketStrikeHeader";
+import { WatchlistButton } from "@/components/WatchlistButton";
 import { cn } from "@/lib/utils";
 
 interface SignalRow {
@@ -131,10 +132,13 @@ const Orders = () => {
                   >
                     {s.direction === "long" ? "LONG" : "SHRT"}
                   </div>
-                  <div className="min-w-0">
+                  <div className="min-w-0 flex-1">
                     <div className="text-sm font-bold tracking-wide">{s.ticker}</div>
                     <div className="text-[11px] text-muted-foreground truncate">{s.name}</div>
                   </div>
+                  <WatchlistButton
+                    item={{ ticker: s.ticker, name: s.name, metric: `${s.strikeRate}%`, metricLabel: "Strike Rate" }}
+                  />
                 </div>
 
                 {/* Explanation */}
