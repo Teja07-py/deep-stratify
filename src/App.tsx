@@ -11,6 +11,7 @@ import News from "./pages/News.tsx";
 import Ratings from "./pages/Ratings.tsx";
 import Orders from "./pages/Orders.tsx";
 import Watchlist from "./pages/Watchlist.tsx";
+import Alerts from "./pages/Alerts.tsx";
 import AmbientBackground from "./components/AmbientBackground";
 import { WatchlistProvider } from "./hooks/useWatchlist";
 
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/ratings" element={<Ratings />} />
             <Route path="/orders" element={<Orders />} />
             <Route path="/watchlist" element={<Watchlist />} />
+            <Route path="/alerts" element={<Alerts />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
