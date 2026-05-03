@@ -51,6 +51,8 @@ interface OrderEvent {
   timestamp?: string;
   time?: string;
   date?: string;
+  event?: string;
+  title?: string;
 }
 
 const ORDER_KEYWORDS = [
