@@ -11,6 +11,7 @@ import {
   REFRESH_MS, fetchJson, normalizeResults, sentimentStyles, fmtPct,
   type RawResult, type NormalizedResult, type Sentiment,
 } from "@/lib/resultsApi";
+import { STATIC_RESULTS } from "@/lib/staticData";
 
 type SentFilter = "all" | Sentiment;
 type SortKey = "latest" | "growth";
