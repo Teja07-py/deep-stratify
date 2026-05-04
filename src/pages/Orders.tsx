@@ -5,6 +5,7 @@ import { MarketStrikeHeader } from "@/components/MarketStrikeHeader";
 import { WatchlistButton } from "@/components/WatchlistButton";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { STATIC_ORDERS } from "@/lib/staticData";
 
 const API_BASE = "https://lucky-geckos-give.loca.lt";
 const REFRESH_MS = 60_000;
@@ -218,11 +219,16 @@ const Orders = () => {
         : Array.isArray(data?.orders) ? data.orders
         : Array.isArray(data?.alerts) ? data.alerts
         : [];
-      setOrders(normalize(list));
+      let normalized = normalize(list);
+      if (normalized.length === 0) normalized = normalize(STATIC_ORDERS as OrderEvent[]);
+      setOrders(normalized);
       setLastUpdated(new Date());
     } catch (err) {
       if ((err as Error).name === "AbortError") return;
-      setError((err as Error).message || "Failed to load orders");
+      // Fallback to static seed data so the dashboard stays useful offline.
+      setOrders(normalize(STATIC_ORDERS as OrderEvent[]));
+      setLastUpdated(new Date());
+      setError(null);
     } finally {
       setLoading(false);
       setRefreshing(false);
