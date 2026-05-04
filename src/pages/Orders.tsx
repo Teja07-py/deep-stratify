@@ -447,7 +447,7 @@ const Orders = () => {
                     <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Order Value</div>
                     <div className={cn(
                       "num-display mt-1 text-3xl md:text-4xl font-black tracking-tight",
-                      o.impact === "high" ? "text-bull" : "text-foreground",
+                      o.impact === "high" ? "text-warm" : "text-foreground",
                     )}>
                       {formatCr(o.valueCr)}
                     </div>
