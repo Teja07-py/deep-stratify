@@ -40,11 +40,14 @@ const Results = () => {
         ? (json as RawResult[])
         : Array.isArray((json as any)?.results) ? (json as any).results
         : [];
-      setData(normalizeResults(list));
+      const normalized = normalizeResults(list);
+      setData(normalized.length ? normalized : normalizeResults(STATIC_RESULTS));
       setLastUpdated(new Date());
     } catch (err) {
       if ((err as Error).name === "AbortError") return;
-      setError((err as Error).message || "Failed to load results");
+      // Fallback to static seed data so the dashboard remains usable.
+      setData(normalizeResults(STATIC_RESULTS));
+      setLastUpdated(new Date());
     } finally {
       setLoading(false);
       setRefreshing(false);
