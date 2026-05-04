@@ -49,6 +49,10 @@
     --glow-intensity: 0.28;
     --glow-intensity-soft: calc(var(--glow-intensity) * 0.6);
 
+    /* Warm orange-amber accent for strong/high emphasis */
+    --warm: 32 100% 55%;
+    --warm-glow: 38 95% 60%;
+
     /* Shadows & glows — derived from --glow-intensity */
     --shadow-card: 0 4px 24px -8px hsl(222 80% 1% / 0.7);
     --shadow-card-hover: 0 12px 40px -12px hsl(222 80% 1% / 0.85);
