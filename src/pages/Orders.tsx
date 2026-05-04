@@ -5,6 +5,7 @@ import { MarketStrikeHeader } from "@/components/MarketStrikeHeader";
 import { WatchlistButton } from "@/components/WatchlistButton";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { STATIC_ORDERS } from "@/lib/staticData";
 
 const API_BASE = "https://lucky-geckos-give.loca.lt";
 const REFRESH_MS = 60_000;
