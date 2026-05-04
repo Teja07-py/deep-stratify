@@ -130,7 +130,7 @@ export async function fetchJson<T>(path: string, signal?: AbortSignal): Promise<
 }
 
 export const sentimentStyles: Record<Sentiment, { chip: string; bar: string; dot: string; text: string; label: string; glow: string }> = {
-  strong:  { chip: "border-primary/40 bg-primary/10 text-bull",          bar: "bg-bull",        dot: "bg-bull",        text: "text-bull",        label: "Strong",  glow: "shadow-[0_0_24px_-8px_hsl(var(--primary)/0.45)]" },
+  strong:  { chip: "border-warm/40 bg-warm/10 text-warm", bar: "bg-warm", dot: "bg-warm", text: "text-warm", label: "Strong",  glow: "glow-warm" },
   neutral: { chip: "border-accent/30 bg-accent/10 text-accent-blue",     bar: "bg-accent-blue", dot: "bg-accent-blue", text: "text-accent-blue", label: "Neutral", glow: "" },
   weak:    { chip: "border-destructive/40 bg-destructive/10 text-bear",  bar: "bg-bear",        dot: "bg-bear",        text: "text-bear",        label: "Weak",    glow: "" },
 };
