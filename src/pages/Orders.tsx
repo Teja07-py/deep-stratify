@@ -95,7 +95,7 @@ const normalizeImpact = (val?: string, valueCr?: number | null): Impact => {
 };
 
 const impactStyles: Record<Impact, { dot: string; bar: string; chip: string; glow: string; label: string }> = {
-  high:   { dot: "bg-bull",        bar: "bg-bull",        chip: "border-primary/40 bg-primary/10 text-bull",          glow: "shadow-[0_0_24px_-8px_hsl(var(--primary)/0.45)]", label: "🟢 High Impact" },
+  high:   { dot: "bg-warm",        bar: "bg-warm",        chip: "border-warm/40 bg-warm/10 text-warm",          glow: "glow-warm", label: "🔥 High Impact" },
   medium: { dot: "bg-accent-blue", bar: "bg-accent-blue", chip: "border-accent/40 bg-accent/10 text-accent-blue",     glow: "",                                                  label: "🟡 Medium" },
   low:    { dot: "bg-muted",       bar: "bg-border",      chip: "border-border bg-secondary/50 text-muted-foreground", glow: "",                                                  label: "⚪ Low" },
 };
