@@ -211,6 +211,17 @@
   .bg-bull-soft { background: var(--gradient-bull); }
   .bg-bear-soft { background: var(--gradient-bear); }
 
+  /* Warm orange-amber for strong/high emphasis (replaces blue on strong sentiment & high impact) */
+  .text-warm { color: hsl(var(--warm)); }
+  .bg-warm { background-color: hsl(var(--warm)); }
+  .border-warm { border-color: hsl(var(--warm) / 0.40); }
+  .glow-warm {
+    box-shadow: 0 0 24px -8px hsl(var(--warm) / 0.45);
+  }
+  .shadow-warm {
+    box-shadow: 0 0 18px hsl(var(--warm) / var(--glow-intensity));
+  }
+
   /* Replaces italic emphasis — accent color + slight weight bump */
   .text-highlight {
     color: hsl(var(--accent));
